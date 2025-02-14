@@ -38,11 +38,10 @@
                 button.style.display = "none";
             }
         };
-
+        });
         function scrollToTop() {
             window.scrollTo({ top: 0, behavior: "smooth" });
         }
-        });
 </script>
 
 <h1>Assessing LLMs to Improve the Prediction of COVID-19 Status<h1>
