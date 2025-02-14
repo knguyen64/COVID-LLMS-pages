@@ -29,19 +29,19 @@
             tocList.appendChild(li);
         });
 
-        // add scroll feature
-        window.onscroll = function () {
-        let button = document.getElementById("back-to-top");
-            if (document.documentElement.scrollTop > 200) {
-                button.style.display = "block";
-            } else {
-                button.style.display = "none";
-            }
-        };
-        });
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        }
+        // // add scroll feature
+        // window.onscroll = function () {
+        // let button = document.getElementById("back-to-top");
+        //     if (document.documentElement.scrollTop > 200) {
+        //         button.style.display = "block";
+        //     } else {
+        //         button.style.display = "none";
+        //     }
+        // };
+        // });
+        // function scrollToTop() {
+        //     window.scrollTo({ top: 0, behavior: "smooth" });
+        // }
 </script>
 
 <h1>Assessing LLMs to Improve the Prediction of COVID-19 Status<h1>
