@@ -7,8 +7,6 @@
         toc.innerHTML = "<h3>Table of Contents</h3><ul></ul>";
         document.body.appendChild(toc);
 
-        if (window.innerWidth < 1300) return;
-
         const tocList = toc.querySelector("ul");
         const headerTags = ["H2", "H3", "H4", "H5", "H6"];
 
@@ -369,8 +367,14 @@
     .toc-level-1 { padding-left: 0px; }  /* h2 */
     .toc-level-2 { padding-left: 15px; } /* h3 */
 
+    @media screen and (max-width: 1300px) {
+        #toc {
+            display: none !important;
+        }
+    }
+
     p {
-        font-size: 16px; /* Default Minima size */
+        font-size: 16px;
         line-height: 1.6;
         font-family: inherit;
     }
@@ -391,9 +395,9 @@
         text-align: center;
     }
 
-    @media screen and (max-width: 768px) { /* Adjust the width as needed */
+    @media screen and (max-width: 768px) {
         #table-of-contents {
-            display: none; /* Hides the TOC */
+            display: none;
         }
     }
 
