@@ -324,7 +324,7 @@ model embeddings at the sequence level is identical to DNABERT-2.
         overflow-y: auto;
     }
     #toc h2 {
-        margin-bottom: 20px;
+        margin-top: 40px;
     }
 
     #toc h3 {
