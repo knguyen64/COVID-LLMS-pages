@@ -1,0 +1,42 @@
+<header class="site-header">
+    <div class="container">
+      <h1>
+        <a href="{{ "/" | relative_url }}">{{ site.title }}</a>
+      </h1>
+  
+      <!-- Custom Links -->
+      <nav class="top-links">
+        <ul>
+          <li><a href="{{ '/about' | relative_url }}">About</a></li>
+          <li><a href="{{ '/contact' | relative_url }}">Contact</a></li>
+          <li><a href="{{ 'https://github.com/your-repo' }}" target="_blank">GitHub</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <style>
+    .top-links {
+        display: flex;
+        justify-content: flex-start;
+        margin-top: 10px;
+    }
+
+    .top-links ul {
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    .top-links li {
+        margin-right: 15px;
+    }
+
+    .top-links a {
+        text-decoration: none;
+        color: #007bff;
+    }
+
+    .top-links a:hover {
+        text-decoration: underline;
+    }
+</style>
