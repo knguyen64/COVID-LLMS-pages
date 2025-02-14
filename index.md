@@ -236,10 +236,13 @@
     20%. Using these embeddings, we hope to be able to predict and classify the COVID status
     of individuals based on their microbial data.
 </p>
-
-<img src="assets/aam_architecture.jpg" alt="AAM Architecture" width="500" height="auto">
-
-<img src="assets/aam_denoise_unifrac_encoder.jpg" alt="AAM Denoise Unifrac Encoder" width="500" height="auto">
+<br/><br/>
+<img src="assets/aam_architecture.jpg" alt="AAM Architecture" width="740" height="auto">
+<p>Figure 1: Architecture of AAM</p>
+<br/><br/>
+<img src="assets/aam_denoise_unifrac_encoder.jpg" alt="AAM Denoise Unifrac Encoder" width="740" height="auto">
+<p>Figure 2: Architecture of Denoise UniFrac Encoder</p>
+<br/><br/>
 
 <h3>DNABERT</h3>
 <p>
@@ -325,7 +328,6 @@
 <h2>Conclusion</h2>
 
 <h2>References</h2>
-<a name="ref1"></a> **Zhou, Zhihan and Ji, Yanrong and Li, Weijian and Dutta, Pratik and Davuluri, Ramana and Liu, Han** (2023). *Dnabert-2: Efficient foundation model and benchmark for multi-species genome*. arXiv preprint arXiv:2306.15006. [Link to paper](https://arxiv.org/abs/2306.15006)
 
 <style>
     #toc {
