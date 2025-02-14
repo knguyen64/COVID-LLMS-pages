@@ -2,3 +2,4 @@ theme: minima
 kramdown:
   toc_levels: 2..6
 github: false
+title: ""

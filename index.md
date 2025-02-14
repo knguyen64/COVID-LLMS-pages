@@ -14,7 +14,10 @@
             const id = header.id || header.textContent.trim().replace(/\s+/g, "-").toLowerCase();
             header.id = id;
 
-            if (header.textContent.trim().toLowerCase() === "table of contents") return;
+            if (
+                header.textContent.trim().toLowerCase() === "table of contents" || 
+                header.textContent.trim().toLowerCase() === "covid-llms-pages"
+            ) return;
 
             const li = document.createElement("li");
             li.innerHTML = `<a href="#${id}">${header.textContent}</a>`;
@@ -52,7 +55,7 @@ Models (LLMs). A large language model is a type of machine learning model that i
 on large sets of data to learn patterns and relationships among forms of written content via
 deep neural networks (Toloka AI 2199). Originally developed for natural language processing
 (NLP), LLMs have since expanded into a wide range of sectors, including healthcare.
-
+<br/>
 The COVID-19 pandemic highlighted the importance of data in shaping public health
 responses and accelerating medical research. The virus was first detected in December 2019
 in Wuhan, China when patients experienced symptoms of an atypical pneumonia-like illness
@@ -76,7 +79,7 @@ et al. 2023). Additionally, LLMs were employed to analyze speech and audio data,
 detecting COVID-19-specific vocal biomarkers in coughs or speech patterns (Anibal et al.
 2024). Through these applications, LLMs provided insight and supported the development
 of predictive models for COVID-19, making a contribution to pandemic response efforts.
-
+<br/>
 Although the Public Health Emergency has ended, COVID-19 continues to affect people
 globally. The virus remains highly mutative, with new variants likely to emerge, which
 presents the ongoing challenges of tracking and managing its spread (Markov et al. 2023).
@@ -90,7 +93,7 @@ models for future health crises. Continuing to improve the capabilities of Large
 Models will not only strengthen the ability to predict and manage COVID-19, but also prepare
 for the broader application of LLMs. LLMs are not just a tool for responding to current
 issues, but as a means to shape a better, data-driven future in healthcare and beyond.
-
+<br/>
 Our project leverages the power of Large Language Models, with a focus on pre-trained
 genomic transformers, to improve the current state of predictive models for COVID-19 diagnostics. 
 We will compare the diverse approaches of Random Forest Classifiers, DNABERT,
@@ -98,7 +101,7 @@ DNABERT-2, GROVER, and Attention All Microbes (AAM) to determine which method mo
 effectively integrates Large Language Models into microbiome-based COVID-19 predictions.
 The objective is to improve diagnostic classification by enhancing both prediction
 accuracy and feature selection.
-
+<br/>
 At the core of the investigation and comparative framework is the application of Random
 Forest Classifiers, a machine learning algorithm. When Random Forest was applied
 to classify microbes associated with COVID-19, it resulted in a high predictive accuracy
@@ -107,14 +110,14 @@ among each sample of nares, stool, forehead, and floor inside the hospital (Maro
 utilize Large Language Models. Contemporary solutions have increasingly relied on LLMs,
 which benefit from extensive pre-training on genomic data, offering its insight in analyzing
 biological information.
-
+<br/>
 Models like DNABERT and GROVER both adapted the transformer architecture from
 Bidirectional Encoder Representations from Transformers (BERT). In addition to BERT’s
 abilities, DNABERT and GROVER have been specifically designed to interpret biological
 sequences. DNABERT, for instance, focuses on DNA sequence data and is effective at predicting
 disease-associated genetic variants. GROVER is optimized to process both DNA and
 RNA sequences, allowing for the simultaneous analysis of multiple sequence types.
-
+<br/>
 Beyond these models, our study also incorporates DNABERT-2 and AAM into our comparative 
 framework. DNABERT-2 is a successor of DNABERT as it refines the original architecture 
 and training process of DNABERT, leading to an improved contextual understanding
@@ -146,7 +149,7 @@ in influencing immune responses and disease severity (Yeoh et al. 2021). A signi
 of research has been the use of machine learning techniques to analyze microbiome data in
 the context of predicting their COVID-19 status — whether an individual has tested positive
 or negative for the virus.
-
+<br/>
 Among classical machine learning methods, Random Forest algorithms have demonstrated
 strong performance in classification tasks involving microbiome data (Hernández Medina
 et al. 2022). Marotz, et al. (2020) applied Random Forest classifiers to predict COVID-19
@@ -161,7 +164,7 @@ accuracy despite the imbalance of data. To assess model performance, AUPRC value
 This study highlighted Random Forest as a robust method for microbiome-based
 COVID-19 classification, offering both high accuracy and the ability to identify microbial
 markers that could inform diagnostic strategies.
-
+<br/>
 While Random Forest models have shown promising results, there is also an increasing interest 
 in the application of Large Language Models in healthcare. LLMs can handle unstructured biological 
 data, such as genomic and microbiome sequences. Models like DNABERT,
@@ -215,7 +218,7 @@ to analyze microbial sequencing data. It better captures the contextual relation
 between different parts of a DNA sequence by using attention mechanisms to capture complex
 patterns within microbial communities. Compared to other models, AAM outputs a
 sample-level embedding instead of a sequence-level embedding.
-
+<br/>
 The sample-level embeddings help to reduce the influence of sequencing noise and
 sample variability. This “denoising” effect ensures that the latent representation reflects
 genuine microbial signatures, which can be crucial when relating microbiome profiles to
@@ -355,5 +358,9 @@ model embeddings at the sequence level is identical to DNABERT-2.
 
     html {
         scroll-behavior: smooth;
+    }
+
+    footer a[href*="github.com"] {
+        display: none;
     }
 </style>
