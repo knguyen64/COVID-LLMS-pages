@@ -1,5 +1,7 @@
 <script>
     document.addEventListener("DOMContentLoaded", function () {
+        if (document.getElementById("toc")) return;
+
         const toc = document.createElement("nav");
         toc.id = "toc";
         toc.innerHTML = "<h3>Table of Contents</h3><ul></ul>";
@@ -11,28 +13,24 @@
         document.querySelectorAll("h2, h3, h4, h5, h6").forEach((header) => {
             const id = header.id || header.textContent.trim().replace(/\s+/g, "-").toLowerCase();
             header.id = id;
-            
+
+            if (header.textContent.trim().toLowerCase() === "table of contents") return;
+
             const li = document.createElement("li");
             li.innerHTML = `<a href="#${id}">${header.textContent}</a>`;
 
             const level = headerTags.indexOf(header.tagName); 
-            li.classList.add(`toc-level-${level}`);
+            li.classList.add(`toc-level-${level+1}`);
 
             tocList.appendChild(li);
         });
     });
 </script>
-
-<aside>
-  <div class="toc-container">
-    <h3>Table of Contents</h3>
-    <nav id="toc"></nav>
-  </div>
-</aside>
+<h1>Assessing LLMs to Improve the Prediction of COVID-19 Status<h1>
 
 <h2>Abstract</h2>
 <p>
-    In this study, we assess the performance of four large language models (LLMs)—
+In this study, we assess the performance of four large language models (LLMs)—
 DNABERT, DNABERT-2, GROVER and AAM—in predicting COVID-19 status
 from microbiome data. Given the increasing recognition of the microbiome’s
 role in health outcomes, we focus on how the pretraining of these models
@@ -47,14 +45,15 @@ we used AUROC and AUPRC to benchmark.
 
 <h2>Introduction</h2>
 <p>
-    With the vast amount of data available today, there are plenty of opportunities to harness
+With the vast amount of data available today, there are plenty of opportunities to harness
 it for global progress, from generating personalized recommendations to improving
 communication across languages. This is made possible with the power of Large Language
 Models (LLMs). A large language model is a type of machine learning model that is trained
 on large sets of data to learn patterns and relationships among forms of written content via
 deep neural networks (Toloka AI 2199). Originally developed for natural language processing
 (NLP), LLMs have since expanded into a wide range of sectors, including healthcare.
-    The COVID-19 pandemic highlighted the importance of data in shaping public health
+
+The COVID-19 pandemic highlighted the importance of data in shaping public health
 responses and accelerating medical research. The virus was first detected in December 2019
 in Wuhan, China when patients experienced symptoms of an atypical pneumonia-like illness
 from an unknown cause (Centers for Disease Control and Prevention 2024). It quickly
@@ -77,7 +76,8 @@ et al. 2023). Additionally, LLMs were employed to analyze speech and audio data,
 detecting COVID-19-specific vocal biomarkers in coughs or speech patterns (Anibal et al.
 2024). Through these applications, LLMs provided insight and supported the development
 of predictive models for COVID-19, making a contribution to pandemic response efforts.
-    Although the Public Health Emergency has ended, COVID-19 continues to affect people
+
+Although the Public Health Emergency has ended, COVID-19 continues to affect people
 globally. The virus remains highly mutative, with new variants likely to emerge, which
 presents the ongoing challenges of tracking and managing its spread (Markov et al. 2023).
 However, the many lessons learned from the pandemic continue to drive progress in combating 
@@ -90,14 +90,16 @@ models for future health crises. Continuing to improve the capabilities of Large
 Models will not only strengthen the ability to predict and manage COVID-19, but also prepare
 for the broader application of LLMs. LLMs are not just a tool for responding to current
 issues, but as a means to shape a better, data-driven future in healthcare and beyond.
-    Our project leverages the power of Large Language Models, with a focus on pre-trained
+
+Our project leverages the power of Large Language Models, with a focus on pre-trained
 genomic transformers, to improve the current state of predictive models for COVID-19 diagnostics. 
 We will compare the diverse approaches of Random Forest Classifiers, DNABERT,
 DNABERT-2, GROVER, and Attention All Microbes (AAM) to determine which method most
 effectively integrates Large Language Models into microbiome-based COVID-19 predictions.
 The objective is to improve diagnostic classification by enhancing both prediction
 accuracy and feature selection.
-    At the core of the investigation and comparative framework is the application of Random
+
+At the core of the investigation and comparative framework is the application of Random
 Forest Classifiers, a machine learning algorithm. When Random Forest was applied
 to classify microbes associated with COVID-19, it resulted in a high predictive accuracy
 among each sample of nares, stool, forehead, and floor inside the hospital (Marotz et al.
@@ -105,13 +107,15 @@ among each sample of nares, stool, forehead, and floor inside the hospital (Maro
 utilize Large Language Models. Contemporary solutions have increasingly relied on LLMs,
 which benefit from extensive pre-training on genomic data, offering its insight in analyzing
 biological information.
-    Models like DNABERT and GROVER both adapted the transformer architecture from
+
+Models like DNABERT and GROVER both adapted the transformer architecture from
 Bidirectional Encoder Representations from Transformers (BERT). In addition to BERT’s
 abilities, DNABERT and GROVER have been specifically designed to interpret biological
 sequences. DNABERT, for instance, focuses on DNA sequence data and is effective at predicting
 disease-associated genetic variants. GROVER is optimized to process both DNA and
 RNA sequences, allowing for the simultaneous analysis of multiple sequence types.
-    Beyond these models, our study also incorporates DNABERT-2 and AAM into our comparative 
+
+Beyond these models, our study also incorporates DNABERT-2 and AAM into our comparative 
 framework. DNABERT-2 is a successor of DNABERT as it refines the original architecture 
 and training process of DNABERT, leading to an improved contextual understanding
 of k-mers. Its superior tokenization and representation capabilities make it a promising
@@ -129,7 +133,7 @@ used in DNABERT and DNABERT-2.
 
 <h2>Literature Review</h2>
 <p>
-    Over the course of the pandemic, the world experienced millions of cases and deaths,
+Over the course of the pandemic, the world experienced millions of cases and deaths,
 prompting the development of vaccines and treatments aimed at improving the conditions
 of COVID-19. In response to the evolving crisis, accurate results of COVID-19 cases had become
 essential for healthcare systems to effectively prevent and control the disease (Patil,
@@ -142,7 +146,8 @@ in influencing immune responses and disease severity (Yeoh et al. 2021). A signi
 of research has been the use of machine learning techniques to analyze microbiome data in
 the context of predicting their COVID-19 status — whether an individual has tested positive
 or negative for the virus.
-    Among classical machine learning methods, Random Forest algorithms have demonstrated
+
+Among classical machine learning methods, Random Forest algorithms have demonstrated
 strong performance in classification tasks involving microbiome data (Hernández Medina
 et al. 2022). Marotz, et al. (2020) applied Random Forest classifiers to predict COVID-19
 status using microbiome profiles obtained from 16S rRNA gene amplicon sequencing of
@@ -156,7 +161,8 @@ accuracy despite the imbalance of data. To assess model performance, AUPRC value
 This study highlighted Random Forest as a robust method for microbiome-based
 COVID-19 classification, offering both high accuracy and the ability to identify microbial
 markers that could inform diagnostic strategies.
-    While Random Forest models have shown promising results, there is also an increasing interest 
+
+While Random Forest models have shown promising results, there is also an increasing interest 
 in the application of Large Language Models in healthcare. LLMs can handle unstructured biological 
 data, such as genomic and microbiome sequences. Models like DNABERT,
 DNABERT-2, GROVER, and AAM are effective in modeling such data, leveraging transformer
@@ -187,7 +193,7 @@ can provide more accurate predictive features for COVID-19 status.</li>
 
 <h2>Data Description</h2>
 <p>
-    We utilized sequencing data and biome tables from the QIITA database (Study ID:
+We utilized sequencing data and biome tables from the QIITA database (Study ID:
 13092) (Gonzalez et al. 2018). The complete dataset comprises 972 samples collected
 from hospitalized ICU patients with COVID-19, healthcare providers, and hospital surfaces
 before, during, and after admission. None of the healthcare providers tested positive for
@@ -204,12 +210,13 @@ an 80:20 training and test split for each of the four environments.
 
 <h3>Attention All Microbes (AAM)</h3>
 <p>
-    The Attention All Microbes (AAM) model is an attention-based neural network designed
+The Attention All Microbes (AAM) model is an attention-based neural network designed
 to analyze microbial sequencing data. It better captures the contextual relationship
 between different parts of a DNA sequence by using attention mechanisms to capture complex
 patterns within microbial communities. Compared to other models, AAM outputs a
 sample-level embedding instead of a sequence-level embedding.
-    The sample-level embeddings help to reduce the influence of sequencing noise and
+
+The sample-level embeddings help to reduce the influence of sequencing noise and
 sample variability. This “denoising” effect ensures that the latent representation reflects
 genuine microbial signatures, which can be crucial when relating microbiome profiles to
 COVID-19 outcomes. These embeddings are subsequently used as input features for downstream
@@ -223,7 +230,7 @@ of individuals based on their microbial data.
 
 <h3>DNABERT</h3>
 <p>
-    DNABERT builds on Bidirectional Encoder Representations from Transformers (BERT)
+DNABERT builds on Bidirectional Encoder Representations from Transformers (BERT)
 by adapting the transformer architecture for DNA sequences. The use of BERT relates to
 natural language processing tasks. For instance, BERT is used for sentiment analysis and
 text summarization. DNABERT, on the other hand, relates more to medical use, particularly
@@ -238,7 +245,7 @@ with microbiome data:
     enizes DNA sequences with k-mer representation, with each different k leading to a
     different tokenization of a DNA sequence</li>
 </ul>
-    We leveraged the pre-trained DNABERT model available on HuggingFace for k-mer 6.
+We leveraged the pre-trained DNABERT model available on HuggingFace for k-mer 6.
 DNA sequences were individually inputted in the model by sample and we extracted the
 hidden states as output. Then, the hidden states were mean-pooled to acquire final model
 embeddings at the sequence-level.
@@ -246,7 +253,7 @@ embeddings at the sequence-level.
 
 <h3>DNABERT-2</h3>
 <p>
-    DNABERT-2 improves on its predecessor, DNABERT, by addressing sequence length
+DNABERT-2 improves on its predecessor, DNABERT, by addressing sequence length
 and training limitations as well as increasing the scope of the data. (Zhou et al. 2023)
 The model achieves higher performance than the original in six out of seven different tasks
 which include epigenetic marks prediction, transcription factor prediction on both human
@@ -262,7 +269,7 @@ experiments:
     positional embeddings like DNABERT. Positional embeddings introduce a 512 base
     pair limitation, but by using ALiBi instead, this limitation is eliminated.</li>
 </ul>
-    We leveraged the pre-trained DNABERT-2 model available on HuggingFace. DNA sequences 
+We leveraged the pre-trained DNABERT-2 model available on HuggingFace. DNA sequences 
 were individually inputted in the model by sample, and we extracted the hidden
 states as output. Then, the hidden states were mean-pooled to acquire final model embeddings
 at the sequence-level.
@@ -270,7 +277,7 @@ at the sequence-level.
 
 <h3>GROVER</h3>
 <p>
-    GROVER is a foundation language model that adapted the transformer encoder BERT
+GROVER is a foundation language model that adapted the transformer encoder BERT
 architecture (Sanabria et al. 2024). Unlike DNABERT and DNABERT-2, which were pretrained
 for classification tasks, GROVER was built for general genome modeling and can be
 fine-tuned for other various tasks such as CTCF motif binding, promoter classification, etc.
@@ -294,7 +301,7 @@ commonly used in transformer-based language models.
     <li>Training objective: GROVER was trained for masked token prediction, but could
     easily be fine-tuned</li>
 </ul>
-    We used the pre-trained GROVER model available on HuggingFace. Acquiring the final
+We used the pre-trained GROVER model available on HuggingFace. Acquiring the final
 model embeddings at the sequence level is identical to DNABERT-2.
 </p>
 
@@ -308,12 +315,10 @@ model embeddings at the sequence level is identical to DNABERT-2.
         top: 100px;
         right: 20px;
         width: 250px;
-        background: #f8f9fa;
         padding: 10px;
         border-radius: 5px;
         max-height: 80vh;
         overflow-y: auto;
-        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
     }
 
     #toc h3 {
