@@ -237,6 +237,10 @@
     of individuals based on their microbial data.
 </p>
 
+<img src="assets/aam_architecture.jpg" alt="AAM Architecture" width="500" height="auto">
+
+<img src="assets/aam_denoise_unifrac_encoder.jpg" alt="AAM Denoise Unifrac Encoder" width="500" height="auto">
+
 <h3>DNABERT</h3>
 <p>
     DNABERT builds on Bidirectional Encoder Representations from Transformers (BERT)
@@ -315,8 +319,13 @@
 </p>
 
 <h2>Results</h2>
+
 <h2>Discussion</h2>
+
 <h2>Conclusion</h2>
+
+<h2>References</h2>
+<a name="ref1"></a> **Zhou, Zhihan and Ji, Yanrong and Li, Weijian and Dutta, Pratik and Davuluri, Ramana and Liu, Han** (2023). *Dnabert-2: Efficient foundation model and benchmark for multi-species genome*. arXiv preprint arXiv:2306.15006. [Link to paper](https://arxiv.org/abs/2306.15006)
 
 <style>
     #toc {
