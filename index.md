@@ -315,12 +315,12 @@ was assessed using (A) AUROC and (B) AUPRC.</p>
     
     @media screen and (max-width: 1330px) {
         #toc {
-            display: none;
+            visibility: hidden;
             right: -300px;
         }
 
         .sidebar-active #toc {
-            display: block; 
+            visibility: visible; 
             right: 0px;
             transition: right 0.3s ease-in-out;
         }
