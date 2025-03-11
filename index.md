@@ -252,7 +252,7 @@ was assessed using (A) AUROC and (B) AUPRC.</p>
         position: fixed;
         top: 100px;
         right: 20px;
-        width: auto; /* 250px; */
+        width: 250px;
         padding: 10px;
         border-radius: 5px;
         max-height: 80vh;
@@ -331,7 +331,7 @@ was assessed using (A) AUROC and (B) AUPRC.</p>
         #toc {
             visibility: hidden;
             right: -200px;
-            max-width: 150px;
+            width: 150px;
         }
 
         .sidebar-active #toc {
