@@ -312,7 +312,7 @@ was assessed using (A) AUROC and (B) AUPRC.</p>
     #figure{
         text-align: center;
     }
-    
+/*     
     @media screen and (max-width: 1330px) {
         #toc {
             display: none;
@@ -321,7 +321,7 @@ was assessed using (A) AUROC and (B) AUPRC.</p>
         .sidebar-active #toc {
             display: block; 
         }
-    }
+    } */
 
     @media screen and (min-width: 1331px) {
         #toc {
