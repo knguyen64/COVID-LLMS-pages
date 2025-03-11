@@ -12,19 +12,12 @@
 </script>
 
 
-<div id="overlay" onclick="toggleToc()"></div> <!-- Click outside to close -->
-
-<div id="sidebar">
-    <button class="close-btn" onclick="toggleToc()">×</button>
-    <h2>Table of Contents</h2>
-    <div id="sidebar-toc"></div> <!-- ToC will be inserted here -->
-</div>
-
+<div id="overlay" onclick="toggleToc()"></div>
     
 <header class="site-header">
     <div class="container">  
       <nav class="top-links">
-        <!-- Left-aligned GitHub link -->
+        <!-- left -->
         <a href="https://github.com/ramosrenzo/COVID-LLM" target="_blank">
             <img src="assets/github-mark.png" width="40px" alt="GitHub"/>
         </a>
@@ -35,8 +28,9 @@
             Poster
         </a>
         <div class="spacer"></div>
-        <!-- Right-aligned second image link -->
-        <img class="mobile-feat" src="assets/toc.png" width="30px" alt="Table of Content" onclick="toggleToc()"/>
+       
+        <!-- right -->
+        <img class="mobile-feat" src="assets/toc.png" width="30px" height="30px" alt="Table of Content" onclick="toggleToc()"/>
       </nav>
     </div>
 </header>
@@ -74,6 +68,7 @@
         text-decoration: none;
         color: black;
         padding-left: 15px;
+        padding-right: 15px;
         display: flex;
         flex-direction: column;
         justify-content: center;
