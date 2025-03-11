@@ -248,6 +248,11 @@ was assessed using (A) AUROC and (B) AUPRC.</p>
 <p id="figure">Figure A 4: Empire plot of GROVER stool data</p>
 
 <style>
+    html, body {
+        overflow-x: hidden;
+        max-width: 100vw;
+    }
+
     #toc {
         position: fixed;
         top: 100px;
