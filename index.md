@@ -272,7 +272,7 @@ was assessed using (A) AUROC and (B) AUPRC.</p>
     }
 
     #toc ul {
-        list-style-type: square;
+        list-style-type: none;
         padding-left: 0;
     }
 
