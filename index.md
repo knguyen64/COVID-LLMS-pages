@@ -316,13 +316,14 @@ was assessed using (A) AUROC and (B) AUPRC.</p>
     @media screen and (max-width: 1330px) {
         #toc {
             visibility: hidden;
-            right: -300px;
+            right: -45%;
         }
 
         .sidebar-active #toc {
             visibility: visible; 
             right: 0px;
             transition: right 0.3s ease-in-out;
+            max-width: 100%
         }
     }
 
