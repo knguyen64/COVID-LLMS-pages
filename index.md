@@ -251,6 +251,7 @@ was assessed using (A) AUROC and (B) AUPRC.</p>
     html, body {
         overflow-x: hidden;
         max-width: 100vw;
+        height: 100%;
     }
 
     #toc {
@@ -271,7 +272,7 @@ was assessed using (A) AUROC and (B) AUPRC.</p>
     }
 
     #toc ul {
-        /* list-style-type: none; */
+        list-style-type: none;
         padding-left: 0;
     }
 
@@ -347,7 +348,6 @@ was assessed using (A) AUROC and (B) AUPRC.</p>
         }
 
         #sidebar {
-            position: fixed;
             top: 0;
             right: -200px;
             width: 150px;
