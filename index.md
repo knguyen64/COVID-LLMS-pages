@@ -252,7 +252,7 @@ was assessed using (A) AUROC and (B) AUPRC.</p>
         position: fixed;
         top: 100px;
         right: 20px;
-        width: 250px;
+        width: auto; /* 250px; */
         padding: 10px;
         border-radius: 5px;
         max-height: 80vh;
