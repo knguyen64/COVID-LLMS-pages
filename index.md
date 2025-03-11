@@ -316,8 +316,6 @@ was assessed using (A) AUROC and (B) AUPRC.</p>
     @media screen and (max-width: 1330px) {
         #toc {
             display: none;
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
         }
 
         .sidebar-active #toc {
