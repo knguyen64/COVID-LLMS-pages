@@ -20,7 +20,7 @@
             ) return;
 
             const li = document.createElement("li");
-            li.innerHTML = `<a href="#${id}">${header.textContent}</a>`;
+            li.innerHTML = `<a href="#${id}" scroll-margin-top: 50px;>${header.textContent}</a>`;
 
             const level = headerTags.indexOf(header.tagName); 
             li.classList.add(`toc-level-${level+1}`);
