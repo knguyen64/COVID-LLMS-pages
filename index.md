@@ -20,7 +20,7 @@
             ) return;
 
             const li = document.createElement("li");
-            li.innerHTML = `<a href="#${id}" style="scroll-margin-top: 50px;">${header.textContent}</a>`;
+            li.innerHTML = `<a href="#${id}">${header.textContent}</a>`;
 
             const level = headerTags.indexOf(header.tagName); 
             li.classList.add(`toc-level-${level+1}`);
@@ -389,4 +389,9 @@ was assessed using (A) AUROC and (B) AUPRC.</p>
           object-fit: contain;
         }
     }
+
+    h2, h3, h4, h5, h6 {
+        scroll-margin-top: 50px;
+    }
+
 </style>
