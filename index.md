@@ -320,6 +320,8 @@ was assessed using (A) AUROC and (B) AUPRC.</p>
 
         .sidebar-active #toc {
             display: block; 
+            right: -300px;
+            transition: right 0.3s ease-in-out;
         }
     }
 
