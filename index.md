@@ -391,7 +391,7 @@ was assessed using (A) AUROC and (B) AUPRC.</p>
     }
 
     h2, h3, h4, h5, h6 {
-        scroll-margin-top: 50px;
+        scroll-margin-top: 80px;
     }
 
 </style>
