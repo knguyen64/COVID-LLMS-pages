@@ -1,14 +1,28 @@
 <header class="site-header">
     <div class="container">  
       <nav class="top-links">
+        <!-- Left-aligned GitHub link -->
         <a href="https://github.com/ramosrenzo/COVID-LLM" target="_blank">
             <img src="assets/github-mark.png" width="40px" alt="GitHub"/>
-          </a>
+        </a>
+        <div class="spacer"></div>
+        <!-- Right-aligned second image link -->
+        <img src="assets/github-mark.png" width="40px" alt="Table of Content"/>
       </nav>
     </div>
-  </header>
+</header>
+
   
   <style>
+    .site-header {
+        position: sticky;
+        top: 0;
+        width: 100%;
+        background: white;
+        z-index: 1;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
     .top-links {
         display: flex;
         justify-content: flex-start;
@@ -31,7 +45,13 @@
         color: #007bff;
     }
 
-    .top-links a:hover {
-        text-decoration: underline;
+    .top-links img {
+        display: block;
+        height: 40px;
     }
+
+    .spacer {
+        flex-grow: 1;
+    }
+
 </style>
