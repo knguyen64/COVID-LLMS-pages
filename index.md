@@ -316,7 +316,7 @@ was assessed using (A) AUROC and (B) AUPRC.</p>
     @media screen and (max-width: 1330px) {
         #toc {
             visibility: hidden;
-            right: -45%;
+            right: -300px;
         }
 
         .sidebar-active #toc {
