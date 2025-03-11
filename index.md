@@ -38,7 +38,7 @@
 </p>
 
 <img src="assets/covid.jpg" alt="SARS-CoV-2" width="740" height="auto">
-<p> Source: Centers for Disease Control and Prevention (CDC) </p>
+<p id="source"> Source: Centers for Disease Control and Prevention (CDC) </p>
 <br>
 <h2><b>Abstract</b></h2>
 <p>
@@ -303,6 +303,11 @@ was assessed using (A) AUROC and (B) AUPRC.</p>
     #authors{
         color: gray
     }
+
+    #source{
+        color: gray
+    }
+
 
     #figure{
         text-align: center;
