@@ -1,3 +1,25 @@
+<script>
+    function toggleToc() {
+        document.body.classList.toggle("sidebar-active");
+    }
+    
+    document.addEventListener("DOMContentLoaded", function () {
+        const tocList = document.querySelector("#toc-sidebar ul");
+        const headers = document.querySelectorAll("h2, h3, h4, h5, h6");
+        
+        headers.forEach(header => {
+            const id = header.id || header.textContent.trim().replace(/\s+/g, "-").toLowerCase();
+            header.id = id;
+    
+            if (header.textContent.trim().toLowerCase() === "table of contents") return;
+    
+            const li = document.createElement("li");
+            li.innerHTML = `<a href="#${id}" onclick="toggleSidebar()">${header.textContent}</a>`;
+            tocList.appendChild(li);
+        });
+    });
+</script>
+    
 <div id="sidebar">
     <button class="close-btn" onclick="toggleToc()">✖</button>
     <nav id="toc-sidebar">
