@@ -330,7 +330,8 @@ was assessed using (A) AUROC and (B) AUPRC.</p>
     @media screen and (max-width: 500px) {
         #toc {
             visibility: hidden;
-            right: -300px;
+            right: -200px;
+            max-width: 150px;
         }
 
         .sidebar-active #toc {
