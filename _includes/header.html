@@ -1,40 +1,9 @@
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        if (document.getElementById("tocMobile")) return;
-
-        const toc = document.createElement("nav");
-        toc.id = "tocMobile";
-        toc.innerHTML = "<h3>Table of Contents</h3><ul></ul>";
-        document.body.appendChild(toc);
-
-        const tocList = toc.querySelector("ul");
-        const headerTags = ["H2", "H3", "H4", "H5", "H6"];
-
-        document.querySelectorAll("h2, h3, h4, h5, h6").forEach((header) => {
-            const id = header.id || header.textContent.trim().replace(/\s+/g, "-").toLowerCase();
-            header.id = id;
-
-            if (
-                header.textContent.trim().toLowerCase() === "table of contents" || 
-                header.textContent.trim().toLowerCase() === "covid-llms-pages"
-            ) return;
-
-            const li = document.createElement("li");
-            li.innerHTML = `<a href="#${id}">${header.textContent}</a>`;
-
-            const level = headerTags.indexOf(header.tagName); 
-            li.classList.add(`toc-level-${level+1}`);
-
-            tocList.appendChild(li);
-        });
-    });
-
     function toggleToc() {
         document.body.classList.toggle("sidebar-active");
     }
 </script>
 
-<div id="sidebar"></div>
 <div id="overlay" onclick="toggleToc()"></div>
     
 <header class="site-header">

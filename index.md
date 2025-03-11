@@ -317,6 +317,16 @@ was assessed using (A) AUROC and (B) AUPRC.</p>
         #toc {
             display: none;
         }
+
+        .sidebar-active #toc {
+            display: block; 
+        }
+    }
+
+    @media screen and (min-width: 1331px) {
+        #toc {
+            display: block !important;
+        }
     }
 
     .zoom-container {
