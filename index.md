@@ -327,6 +327,27 @@ was assessed using (A) AUROC and (B) AUPRC.</p>
         }
     }
 
+    @media screen and (max-width: 500px) {
+        #toc {
+            visibility: hidden;
+            right: -300px;
+        }
+
+        .sidebar-active #toc {
+            visibility: visible; 
+            right: 0px;
+            transition: right 0.3s ease-in-out;
+            max-width: 100%
+        }
+
+        #sidebar {
+            position: fixed;
+            top: 0;
+            right: -200px;
+            width: 150px;
+        }
+    }
+
     @media screen and (min-width: 1331px) {
         #toc {
             display: block !important;
