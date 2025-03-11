@@ -334,7 +334,7 @@ was assessed using (A) AUROC and (B) AUPRC.</p>
         }
     }
 
-    @media screen and (max-width: 500px) {
+    @media screen and (max-width: 400px) {
         #toc {
             visibility: hidden;
             right: -200px;
