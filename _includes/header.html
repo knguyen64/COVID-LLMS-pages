@@ -1,50 +1,14 @@
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        function generateToc() {
-            let sidebarToc = document.getElementById("sidebar-toc");
-
-            if (document.getElementById("toc")) return;
-
-            const toc = document.createElement("nav");
-            toc.id = "toc";
-            toc.innerHTML = "<h3>Table of Contents</h3><ul></ul>";
-            sidebarToc.appendChild(toc);
-
-            const tocList = toc.querySelector("ul");
-            const headerTags = ["H2", "H3", "H4", "H5", "H6"];
-
-            document.querySelectorAll("h2, h3, h4, h5, h6").forEach((header) => {
-                const id = header.id || header.textContent.trim().replace(/\s+/g, "-").toLowerCase();
-                header.id = id;
-
-                if (
-                    header.textContent.trim().toLowerCase() === "table of contents" || 
-                    header.textContent.trim().toLowerCase() === "covid-llms-pages"
-                ) return;
-
-                const li = document.createElement("li");
-                li.innerHTML = `<a href="#${id}">${header.textContent}</a>`;
-
-                const level = headerTags.indexOf(header.tagName);
-                li.classList.add(`toc-level-${level + 1}`);
-
-                tocList.appendChild(li);
-            });
+        let existingToc = document.getElementById("toc");
+        if (existingToc) {
+            document.getElementById("sidebar-toc").appendChild(existingToc);
         }
-
-        function toggleToc() {
-            document.body.classList.toggle("sidebar-active");
-
-            if (document.body.classList.contains("sidebar-active")) {
-                generateToc();
-            } else {
-                const toc = document.getElementById("toc");
-                if (toc) toc.remove();
-            }
-        }
-
-        document.querySelector(".mobile-feat").addEventListener("click", toggleToc);
     });
+
+    function toggleToc() {
+        document.body.classList.toggle("sidebar-active");
+    }
 </script>
 
 <div id="sidebar"></div>

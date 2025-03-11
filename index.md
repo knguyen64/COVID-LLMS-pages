@@ -257,6 +257,7 @@ was assessed using (A) AUROC and (B) AUPRC.</p>
         border-radius: 5px;
         max-height: 80vh;
         overflow-y: auto;
+        z-index: 10;
     }
 
     #toc h3 {
