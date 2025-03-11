@@ -1,42 +1,25 @@
 <script>
+    let openToc = False;
+
     function toggleToc() {
         document.body.classList.toggle("sidebar-active");
     }
-    
-    document.addEventListener("DOMContentLoaded", function () {
-        const tocList = document.querySelector("#toc-sidebar ul");
-        const headers = document.querySelectorAll("h2, h3, h4, h5, h6");
-        
-        headers.forEach(header => {
-            const id = header.id || header.textContent.trim().replace(/\s+/g, "-").toLowerCase();
-            header.id = id;
-    
-            if (header.textContent.trim().toLowerCase() === "table of contents") return;
-    
-            const li = document.createElement("li");
-            li.innerHTML = `<a href="#${id}" onclick="toggleSidebar()">${header.textContent}</a>`;
-            tocList.appendChild(li);
-        });
-    });
 </script>
     
-<div id="sidebar">
-    <button class="close-btn" onclick="toggleToc()">✖</button>
-    <nav id="toc-sidebar">
-        <h3>Table of Contents</h3>
-        <ul></ul>
-    </nav>
-</div>
-
-<div id="overlay" onclick="toggleToc()"></div>
-
 <header class="site-header">
     <div class="container">  
       <nav class="top-links">
         <!-- Left-aligned GitHub link -->
         <a href="https://github.com/ramosrenzo/COVID-LLM" target="_blank">
-            <img src="assets/github-mark.png" width="40px" alt="GitHub"/>
+            <img src="assets/github-mark.png" width="30px" alt="GitHub"/>
         </a>
+        <a href="https://drive.google.com/file/d/1Xxx3iYT-qGeItVTY63GZ5-o7nRq28MiY/view" target="_blank">
+            Poster
+        </a>
+        <a href="https://drive.google.com/file/d/1EQjnjzPm0U0Nj1R9L_x7XSvuHDGABfT3/view" target="_blank">
+            Report
+        </a>
+
         <div class="spacer"></div>
         <!-- Right-aligned second image link -->
         <img class="mobile-feat" src="assets/toc.png" width="40px" alt="Table of Content" onclick="toggleToc()"/>
@@ -77,6 +60,11 @@
         text-decoration: none;
         color: #007bff;
     }
+
+    .top-links a:hover {
+        text-decoration: underline;
+    }
+
 
     .top-links img {
         display: block;
