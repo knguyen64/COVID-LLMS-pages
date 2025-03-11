@@ -323,6 +323,7 @@ was assessed using (A) AUROC and (B) AUPRC.</p>
         #toc {
             visibility: hidden;
             right: -300px;
+            width: 220px;
         }
 
         .sidebar-active #toc {
