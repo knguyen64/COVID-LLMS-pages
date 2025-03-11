@@ -1,3 +1,13 @@
+<div id="sidebar">
+    <button class="close-btn" onclick="toggleToc()">✖</button>
+    <nav id="toc-sidebar">
+        <h3>Table of Contents</h3>
+        <ul></ul>
+    </nav>
+</div>
+
+<div id="overlay" onclick="toggleToc()"></div>
+
 <header class="site-header">
     <div class="container">  
       <nav class="top-links">
@@ -7,7 +17,7 @@
         </a>
         <div class="spacer"></div>
         <!-- Right-aligned second image link -->
-        <img src="assets/github-mark.png" width="40px" alt="Table of Content"/>
+        <img class="mobile-feat" src="assets/toc.png" width="40px" alt="Table of Content" onclick="toggleToc()"/>
       </nav>
     </div>
 </header>
@@ -29,6 +39,7 @@
         padding-top: 10px;
         padding-bottom: 10px;
         padding-left: 15px;
+        padding-right: 15px;
     }
 
     .top-links ul {
@@ -54,4 +65,57 @@
         flex-grow: 1;
     }
 
+    .mobile-feat{
+        display: none;
+    }
+
+    @media (max-width: 1330px) {
+    .second-img {
+        display: inline-block;
+    }
+
+    #sidebar {
+        position: fixed;
+        top: 0;
+        right: -300px;
+        width: 250px;
+        height: 100%;
+        background: white;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        overflow-y: auto;
+        transition: right 0.3s ease-in-out;
+        z-index: 1001;
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        background: none;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    #overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: none;
+        z-index: 1000;
+    }
+
+    .sidebar-active #sidebar {
+        right: 0;
+    }
+
+    .sidebar-active #overlay {
+        display: block;
+    }
+
+}
 </style>
